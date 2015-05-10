@@ -1,38 +1,31 @@
 {
-  "name": "hubot-welcome",
-  "description": "A hubot script for welcoming new users",
-  "version": "0.0.1",
-  "author": "jjasghar",
-  "license": "MIT",
-
-  "keywords": [
-    "hubot",
-    "hubot-scripts"
-  ],
-
+  "name": "hodor-hola",
+  "version": "1.0.0",
+  "description": "A hodor script to greet newbies to your channel",
+  "main": "index.coffee",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "script/test"
+  },
   "repository": {
     "type": "git",
-    "url": "git@github.com:jjasghar/hubot-welcome.git"
+    "url": "https://github.com/latamjs/hodor-hola.git"
   },
-
+  "author": "Nicolas Bevacqua <nicolasbevacqua@gmail.com> (http://bevacqua.io/)",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jjasghar/hubot-welcome/issues"
+    "url": "https://github.com/latamjs/hodor-hola/issues"
   },
-
+  "homepage": "https://github.com/latamjs/hodor-hola",
   "dependencies": {
     "coffee-script": "*"
   },
-
   "devDependencies": {
     "mocha": "*",
     "chai": "*",
     "sinon-chai": "*",
     "sinon": "*"
-  },
-
-  "main": "index.coffee",
-
-  "scripts": {
-    "test": "script/test"
   }
 }

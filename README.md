@@ -1,32 +1,30 @@
-# hubot-welcome
-A hubot script to greet newbies to your channel
+# hodor-hola
 
-See [`src/welcome.coffee`](src/welcome.coffee) for full documentation.
+> A hodor script to greet newbies to your channel
+
+See [`src/hola.coffee`](src/hola.coffee) for full documentation.
 
 ## Installation
 
-In hubot project repo, run:
+In hodor project repo, run:
 
-`npm install hubot-welcome --save`
+`npm install hodor-hola --save`
 
-Then add **hubot-welcome** to your `external-scripts.json`:
+Then add **hodor-hola** to your `external-scripts.json`:
 
 ```json
 [
-  "hubot-welcome"
+  "hodor-hola"
 ]
 ```
 
-## Configuration
+## `hola`
 
-None :)
-
-## Command
 Example: `hodor hola <hola querido %s>` Added greeting message: `hola querido %s`
 
 ## Sample Interaction
 
 ```
 user1> Hey everyone I'm new!
-Hubot> Welcome user1, nice to meet you!
+hodor> Hola user1, nice to meet you!
 ```
