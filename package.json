@@ -1,14 +1,8 @@
 {
   "name": "hodor-hola",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A hodor script to greet newbies to your channel",
   "main": "index.coffee",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "script/test"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/latamjs/hodor-hola.git"
@@ -19,9 +13,6 @@
     "url": "https://github.com/latamjs/hodor-hola/issues"
   },
   "homepage": "https://github.com/latamjs/hodor-hola",
-  "dependencies": {
-    "coffee-script": "*"
-  },
   "devDependencies": {
     "mocha": "*",
     "chai": "*",
