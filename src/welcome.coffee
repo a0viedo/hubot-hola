@@ -15,20 +15,20 @@
 
 module.exports = (robot) ->
   robot.brain.on 'loaded', =>
-    robot.brain.data.welcome ||= {}
-    robot.brain.data.users ||= [ ]
+    robot.brain.hola.messages ||= []
+    robot.brain.hola.users ||= []
 
   robot.enter (msg) ->
-    welcome = robot.brain.get('data.welcome') # pull out the welcome message
-    stored_users = robot.brain.get('data.users') # get a list of the known stored users
-    users = robot.brain.usersForFuzzyName("#{msg.message.user.name}") # get the user name of someone saying something
-    if users in stored_users # if the user above is in the stored_users do nothing
-    else
-      msg.send "Welcome, #{msg.message.user.name}, #{welcome}" # if it's the first time you're seeing them give them the welcome message
-      robot.brain.set 'data.users', msg.message.user.name # add the user name to the stored_users
+    messages = robot.brain.get('hola.messages')
+    message = messages[Math.floor(Math.random() * messages.length)]
+    welcome = message.replace('%s', msg.message.user.name)
+    stored_users = robot.brain.get('hola.users')
+    users = robot.brain.usersForFuzzyName("#{msg.message.user.name}")
+    if !(users in stored_users)
+      msg.send welcome
+      robot.brain.set 'hola.users', msg.message.user.name
 
-
-  robot.respond /welcome (.*)$/i, (msg) ->
-    welcome = msg.match[1]
-    robot.brain.set 'data.welcome', welcome.trim()
-    msg.send "Updated the welcome to: #{welcome}"
+  robot.respond /hola (.*)$/i, (msg) ->
+    message = msg.match[1]
+    robot.brain.set 'hola.messages', message.trim()
+    msg.send "Added Hola message: #{message}"

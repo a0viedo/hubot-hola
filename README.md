@@ -22,7 +22,7 @@ Then add **hubot-welcome** to your `external-scripts.json`:
 None :)
 
 ## Command
-Example: `hubot welcome <some welcome message>` The default greeting is: `nice to meet you!`
+Example: `hodor hola <hola querido %s>` Added greeting message: `hola querido %s`
 
 ## Sample Interaction
 
