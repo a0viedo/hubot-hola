@@ -7,7 +7,7 @@ function hola (robot) {
   robot.respond(/hola list$/i, list);
   robot.respond(/hola rm (\d+)$/i, rm);
   robot.respond(/hola add (.*)$/i, add);
-  robot.respond(/hola|saludame|hodor|buenas$/i, salute);
+  robot.respond(/(hola|saludame|hodor|buenas)$/i, salute);
 
   function entering (command) {
     var user = command.message.user.name;
@@ -42,7 +42,7 @@ function hola (robot) {
 
   function add (command) {
     var all = robot.brain.get('hola.messages') || [];
-    var message = command.match[1].trim();
+    var message = command.match[1].trim().replace(/(^["'])|(["']$)/g, '');
     all.push(message);
     robot.brain.set('hola.messages', all);
     command.send('Hodor.');
