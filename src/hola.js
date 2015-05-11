@@ -3,8 +3,11 @@
 function hola (robot) {
   robot.brain.on('loaded', loaded);
   robot.enter(entering);
-  robot.respond(/hola (.*)$/i, add);
-  robot.respond(/saludame|hodor|hola$/i, salute);
+  robot.respond(/hola clear$/i, clear);
+  robot.respond(/hola list$/i, list);
+  robot.respond(/hola rm (\d+)$/i, rm);
+  robot.respond(/hola add (.*)$/i, add);
+  robot.respond(/hola|saludame|hodor|buenas$/i, salute);
 
   function entering (command) {
     var user = command.message.user.name;
@@ -16,12 +19,33 @@ function hola (robot) {
     }
   }
 
+  function clear (command) {
+    robot.brain.set('hola.messages', []);
+    command.send('Hodor.');
+  }
+
+  function rm (command) {
+    var all = robot.brain.get('hola.messages') || [];
+    all.splice(parseInt(command.match[1], 10), 1);
+    robot.brain.set('hola.messages', all);
+    command.send('Hodor.');
+  }
+
+  function list (command) {
+    var all = robot.brain.get('hola.messages') || [];
+    command.send('Hodor.\n' + all.map(withIndex).join('\n'));
+  }
+
+  function withIndex (message, i) {
+    return i + '. ' + message;
+  }
+
   function add (command) {
     var all = robot.brain.get('hola.messages') || [];
     var message = command.match[1].trim();
     all.push(message);
     robot.brain.set('hola.messages', all);
-    command.send('Nueva bienvenida: ' + message);
+    command.send('Hodor.');
   }
 
   function salute (command) {

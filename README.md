@@ -1,14 +1,12 @@
 # hodor-hola
 
-> A hodor script to greet newbies to your channel
+> Un script para que `hodor` de bienvenidas a nuevos invitados!
 
-See [`src/hola.coffee`](src/hola.coffee) for full documentation.
+## Install
 
-## Installation
-
-In hodor project repo, run:
-
-`npm install hodor-hola --save`
+```
+npm install hodor-hola --save
+```
 
 Then add **hodor-hola** to your `external-scripts.json`:
 
@@ -18,13 +16,14 @@ Then add **hodor-hola** to your `external-scripts.json`:
 ]
 ```
 
-## `hola`
+# Commands
 
-Example: `hodor hola <hola querido %s>` Added greeting message: `hola querido %s`
+- `hodor add (message)` adds welcome `message`
+- `hodor hola list` displays list
+- `hodor rm (index)` removes welcome message at `index`
+- `hodor hola clear` wipes out list
+- `hodor hodor` uses random welcome message to salute you
 
-## Sample Interaction
+# License
 
-```
-user1> Hey everyone I'm new!
-hodor> Hola user1, nice to meet you!
-```
+MIT
