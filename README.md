@@ -18,9 +18,9 @@ Then add **hodor-hola** to your `external-scripts.json`:
 
 # Commands
 
-- `hodor add (message)` adds welcome `message`
+- `hodor hola add (message)` adds welcome `message`
 - `hodor hola list` displays list
-- `hodor rm (index)` removes welcome message at `index`
+- `hodor hola rm (index)` removes welcome message at `index`
 - `hodor hola clear` wipes out list
 - `hodor hodor` uses random welcome message to salute you
 
