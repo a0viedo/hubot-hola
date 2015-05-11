@@ -51,7 +51,7 @@ function hola (robot) {
   function salute (command) {
     var messages = robot.brain.get('hola.messages') || ['Hola %s!'];
     var message = messages[Math.floor(Math.random() * messages.length)];
-    var welcome = message.replace('%s', '@' + command.message.user.name);
+    var welcome = message.replace('%s', '<@' + command.message.user.name + '>');
     command.send(welcome);
   }
 
