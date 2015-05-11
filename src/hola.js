@@ -4,7 +4,7 @@ function hola (robot) {
   robot.brain.on('loaded', loaded);
   robot.enter(entering);
   robot.respond(/hola (.*)$/i, add);
-  robot.respond(/saludame$/i, salute);
+  robot.respond(/saludame|hodor$/i, salute);
 
   function entering (command) {
     var user = command.message.user.name;
