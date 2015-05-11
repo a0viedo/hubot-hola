@@ -1,6 +1,6 @@
 {
   "name": "hodor-hola",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A hodor script to greet newbies to your channel",
   "main": "index.coffee",
   "repository": {
